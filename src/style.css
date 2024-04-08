@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-gradients {
+  background-image: linear-gradient(99deg, #ab83e7, #350084);
+}
+
+.icon-menu {
+  @apply flex h-[32px] w-[32px] items-center justify-center rounded-lg hover:bg-primary;
+}
