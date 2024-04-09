@@ -7,5 +7,13 @@
 }
 
 .icon-menu {
-  @apply flex h-[32px] w-[32px] items-center justify-center rounded-lg hover:bg-primary;
+  @apply flex h-[32px] w-[32px] items-center justify-center rounded-lg hover:bg-primary md:h-12 md:w-12;
+}
+
+.separator {
+  @apply h-6 w-[2px] bg-[#ffffff33];
+}
+
+.menu-buttons {
+  @apply fixed bottom-0 left-1/2 w-full -translate-x-1/2 rounded-t-xl bg-gradient-to-r from-[#584673] to-[#302640] pt-[1px] sm:bottom-8 sm:max-w-md sm:rounded-xl sm:p-px md:max-w-lg lg:max-w-xl;
 }

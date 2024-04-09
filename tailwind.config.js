@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "#1a1621",
         primary_alt: "#8259c0",
+        primary_alt_dark: "#2c2339",
         secondary: "#302640",
         secondary_alt: "#350084",
       },
@@ -15,7 +16,7 @@ export default {
       },
     },
     container: {
-      padding: "1rem",
+      padding: "2rem",
       center: true,
     },
   },
