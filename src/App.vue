@@ -1,49 +1,77 @@
 <script setup>
+import { onMounted, ref } from "vue";
+
+const showMenu = ref(false);
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+};
 </script>
 
 <template>
-  <header>
-    <div class="container flex items-center justify-between py-4">
-      <a href="#" class="logo text-xl font-semibold">Bayu <span class="text-primary_alt">x Tasks</span></a>
-      <div class="rounded-full bg-gradient-to-br from-white to-[#350084] p-px">
-        <button
-          class="flex items-center justify-center rounded-full bg-gradient-to-br from-[#ab83e7] to-[#350084] px-[12px] py-[4px] text-base shadow-button">
-          <p>Powered by</p>
-          <i class='bx bx-chevron-down'></i>
-        </button>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav-logo">
+        Bay<span class="text-primary_alt">xTasks</span>
+      </a>
+      <a href="#" @click="toggleMenu" class="nav-btn">
+        Powered by
+        <i class="bx bx-chevron-down text-xl"></i>
+      </a>
+      <div :class="{ 'show-menu': showMenu }" class="nav-menu">
+        <a href="#" class="nav-link">
+          <i class="bx bxl-vuejs text-2xl"></i>
+          <p>Vue Framework</p>
+        </a>
+
+        <a href="#" class="nav-link">
+          <i class="bx bxl-tailwind-css text-2xl"></i>
+          <p>Tailwind CSS</p>
+        </a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="py-16">
-      <div class="container lg:max-w-2xl relative">
-        <div class="mb-10 flex columns-1 justify-between">
+  <main class="main mt-14 py-16">
+    <div class="">
+      <div class="container relative">
+        <div class="mb-10 columns-2">
           <h1 class="text-2xl font-semibold text-primary_alt">All</h1>
-          <button class="flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-base hover:shadow-button_hover">
-            <i class="bx bx-trash text-xl"></i>
-            <p>Delete All</p>
-          </button>
+          <a
+            href="#"
+            class="flex items-center justify-center gap-x-1 rounded-xl bg-secondary px-3 py-1 transition duration-300 hover:shadow-button_hover hover:ring-1"
+          >
+            <i class="bx bx-trash text-2xl"></i>
+            Delete All
+          </a>
         </div>
-
-        <div class="cursor-pointer text-center opacity-[0.4]">
+        <div class="cursor-pointer columns-1 text-center opacity-[0.4]">
           <span class="inline-block"><i class="bx bx-plus text-5xl"></i></span>
           <p>Create your first task</p>
         </div>
-
-        <div class="menu-buttons">
-          <div class="flex items-center gap-x-2 p-2 justify-evenly bg-primary_alt_dark rounded-t-xl sm:rounded-xl">
-            <button class="icon-menu"><i class="bx bx-list-ul text-3xl md:text-5xl"></i></button>
-            <button class="icon-menu"><i class="bx bx-checkbox text-3xl md:text-5xl"></i></button>
-            <button class="icon-menu"><i class="bx bx-checkbox-checked text-3xl md:text-5xl"></i></button>
-            <div class="separator"></div>
-            <button class="icon-menu"><i class="bx bx-plus text-3xl md:text-5xl"></i></button>
-            <button class="icon-menu"><i class="bx bx-search text-2xl md:text-4xl"></i></button>
-            <div class="separator"></div>
-            <button class="icon-menu"><i class="bx bx-globe text-2xl md:text-4xl"></i></button>
-          </div>
+        <div class="fixed bottom-0 left-0 right-0 flex h-14 items-center justify-evenly rounded-t-lg bg-primary_alt_dark p-2 shadow-md">
+          <button class="icon-menu active">
+            <i class="bx bx-list-ul text-3xl md:text-5xl"></i>
+          </button>
+          <button class="icon-menu">
+            <i class="bx bx-checkbox text-3xl md:text-5xl"></i>
+          </button>
+          <button class="icon-menu">
+            <i class="bx bx-checkbox-checked text-3xl md:text-5xl"></i>
+          </button>
+          <div class="separator"></div>
+          <button class="icon-menu">
+            <i class="bx bx-plus text-3xl md:text-5xl"></i>
+          </button>
+          <button class="icon-menu">
+            <i class="bx bx-search text-2xl md:text-4xl"></i>
+          </button>
+          <div class="separator"></div>
+          <button class="icon-menu">
+            <i class="bx bx-globe text-2xl md:text-4xl"></i>
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 </template>

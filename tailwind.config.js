@@ -14,9 +14,12 @@ export default {
         button: "0 0 17px 0 #7030f7",
         button_hover: "inset 0 0 0 100px rgba(0, 0, 0, 0.15)",
       },
+      zIndex: {
+        100: "100",
+      },
     },
     container: {
-      padding: "2rem",
+      padding: "1rem",
       center: true,
     },
   },
